@@ -1,0 +1,48 @@
+.displayArea {
+    width: 200px;
+    height: 320px;
+    margin:5px;
+    transform-style: preserve-3d;
+    transition: transform 1s;
+    backface-visibility: hidden;
+    position: relative;
+}
+
+div {
+    display: inline-block;
+}
+
+.back {
+    display:none;
+    background: rgba(0,0,0,0.75);
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    line-height:20px;
+  vertical-align: middle;
+}
+
+.back:hover {
+    display: table-cell;
+}
+
+.displayArea .front:hover ~ .back {
+    display: table-cell;
+}
+
+.back ul {
+    color: white;
+    list-style-type: none;
+    padding: 0;
+}
+
+a {
+    color: white;
+    text-decoration:none;
+    font-weight: 600;
+}
+
+.mdl-grid {
+  width: 100%;
+}

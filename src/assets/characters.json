@@ -1,0 +1,29 @@
+[
+    {
+        "name":"Ada",
+        "age":12,
+        "profession":"Peintre",
+        "professioncategoryid":101,
+        "criminalitylevel":2,
+        "civilstatus":"Celib",
+        "imgurl":null
+    },
+    {
+        "name":"Bob",
+        "age":29,
+        "profession":"Dealer",
+        "professioncategoryid":201,
+        "criminalitylevel":5,
+        "civilstatus":"Celib",
+        "imgurl":null
+    },
+    {
+        "name":"Carl",
+        "age":51,
+        "profession":"Epicier",
+        "professioncategoryid":102,
+        "criminalitylevel":0,
+        "civilstatus":"Married",
+        "imgurl":null
+    }
+]

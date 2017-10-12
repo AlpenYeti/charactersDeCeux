@@ -1,0 +1,94 @@
+<!--The whole content below can be removed with the new code.-->
+  <h1>
+    {{title}}
+  </h1>
+<main class="mdl-layout__content">
+    <div class="mdl-grid">
+      <div class="form-group">
+        <label for="gender">genre</label>
+        <select class="form-control" id="gender" [(ngModel)]="filter.gender" title="Genre">
+          <option value="">Aucun</option>
+          <option value="masculin">Masculin</option>
+          <option value="féminin">Féminin</option>
+          <option value="autre">Autre</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="legaloccupation">Occupation légale</label>
+        <select class="form-control" id="legaloccupation" [(ngModel)]="filter.legaloccupation" title="Occupation Légale">
+            <option value="">Aucune</option>
+            <option value="Arts,culture,divertissement">Arts, culture, divertissement</option>
+            <option value="Commerce,industrie">Commerce, industrie</option>
+            <option value="Défense publique,sécurité,droit">Défense publique, sécurité, droit</option>
+            <option value="Enseignement,recherche">Enseignement, recherche</option>
+            <option value="Hôtellerie,restauration">Hôtellerie, restauration</option>
+            <option value="Santé,social,service à la personne,esthétique">Santé, social, service à la personne, esthétique</option>
+          </select>
+      </div>
+      <div class="form-group">
+        <label for="illegaloccupation">Occupation illégale</label>
+        <select class="form-control" id="illegaloccupation" [(ngModel)]="filter.illegaloccupation" title="Occupation Ilégale">
+          <option value="">Aucune</option>
+          <option value="Drogue">Drogue</option>
+          <option value="Prostitution">Prostitution</option>
+          <option value="Armes">Armes</option>
+          <option value="Mercenariat">Mercenariat</option>
+          <option value="Jeux">Jeux</option>
+          <option value="Arènes de Rue">Arènes de Rue</option>
+          <option value="Art">Art</option>
+          <option value="Contrefaçon/Blanchiment">Contrefaçon/Blanchiment</option>
+          <option value="Hacking">Hacking</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="age">Age</label>
+        <select class="form-control" id="age" [(ngModel)]="filter.age" title="age">
+          <option value="">Aucun</option>
+          <option value="< 20">< 20</option>
+          <option value="21-30">21-30</option>
+          <option value="31-40">31-40</option>
+          <option value="41-50">41-50</option>
+          <option value="> 50">> 50</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="civilstatus">Statut Civil</label>
+        <select class="form-control" id="civilstatus" [(ngModel)]="filter.civilstatus" title="civilstatus">
+          <option value="">Aucune</option>
+          <option value="en couple">En couple</option>
+          <option value="marié">Marié</option>
+          <option value="célibataire">Célibataire</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="etage">Etage</label>
+        <select class="form-control" id="etage" [(ngModel)]="filter.etage"  title="etage">
+          <option value="">Aucune</option>
+          <option *ngFor="let number of ['00','01','02','03','04','05','06','07','08','09','10','11','12','13','14','15']" value={{number}}>{{number}}</option>
+        </select>
+      </div>
+    </div>
+    <div class="mdl-grid">
+      <div class="displayArea" *ngFor="let character of characters | characterfilter:filter">
+        <div class="front">
+            <img src={{character.avatarurl}} alt="no pic">
+        </div>
+        <div class="back">
+          <div>
+            <ul>
+              <li>{{character.name}}</li>
+              <li>{{character.legaloccupation}}</li>
+              <li>{{character.illegaloccupation}}</li>
+              <li>Étage {{character.etage}}</li>
+              <li>{{character.age}}</li>
+              <li>{{character.civilstatus}}</li>
+              <li>Criminalité {{character.criminalitylevel}}</li>
+              <li>{{character.gender}}</li>
+              <li>______</li>
+              <li><a href="{{character.charsheeturl}}">Feuille</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+</main>
