@@ -1,7 +1,6 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 import { Character } from './character';
-import {logger} from "codelyzer/util/logger";
 
 @Pipe({
     name: 'characterfilter',
