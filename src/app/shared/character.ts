@@ -6,7 +6,7 @@ export class Character {
     age: number;
     civilstatus: String;
     avatarurl: String;
-    criminalitylevel: number;
+    criminalitylevel: String;
     gender: String;
     charsheeturl: String;
 }

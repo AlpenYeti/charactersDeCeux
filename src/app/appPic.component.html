@@ -38,6 +38,7 @@
           <option value="Art">Art</option>
           <option value="Contrefaçon/Blanchiment">Contrefaçon/Blanchiment</option>
           <option value="Hacking">Hacking</option>
+          <option value="organes">Traffic d'organes</option>
         </select>
       </div>
       <div class="form-group">
@@ -67,6 +68,15 @@
           <option *ngFor="let number of ['00','01','02','03','04','05','06','07','08','09','10','11','12','13','14','15']" value={{number}}>{{number}}</option>
         </select>
       </div>
+      <div class="form-group">
+        <label for="criminality">Criminalité</label>
+        <select name="criminality" id="criminality" [(ngModel)]="filter.criminalitylevel">
+          <option value="bon citoyen">Bon Citoyen</option>
+          <option value="voyou">Voyou</option>
+          <option value="gangster">Gangster</option>
+          <option value="psycho">Psycho</option>
+        </select>
+      </div>
     </div>
     <div class="mdl-grid">
       <div class="displayArea" *ngFor="let character of characters | characterfilter:filter">
@@ -82,7 +92,7 @@
               <li>Étage {{character.etage}}</li>
               <li>{{character.age}}</li>
               <li>{{character.civilstatus}}</li>
-              <li>Criminalité {{character.criminalitylevel}}</li>
+              <li>{{character.criminalitylevel}}</li>
               <li>{{character.gender}}</li>
               <li>______</li>
               <li><a href="{{character.charsheeturl}}">Feuille</a></li>
